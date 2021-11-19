@@ -102,7 +102,10 @@ class InternalMenu extends React.Component<InternalMenuProps> {
           direction={direction}
           defaultMotions={defaultMotions}
           expandIcon={cloneElement(expandIcon, {
-            className: `${prefixCls}-submenu-expand-icon`,
+            className: classNames(
+              `${prefixCls}-submenu-expand-icon`,
+              expandIcon && (expandIcon as any).className,
+            ),
           })}
         />
       </MenuContext.Provider>
